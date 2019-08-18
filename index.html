@@ -9,34 +9,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lexend+Deca&display=swap" rel="stylesheet">
     <style>
-        #splashDiv{
-            height: 100%;
-            width:100%;
-            text-align: center;
-            margin-top:10%;
-            margin-bottom:20%;
+        * {
+            margin: 0;
+            padding: 0;
         }
+
         body {
-            height: 100%;
             font-family: 'Lexend Deca', sans-serif;
-            background-color:aliceblue;
+            background-color: aliceblue;
         }
-        #limoImg{
-            position: relative;
-/*            width: 100%*/
+
+        #imageDiv {
+            display: grid;
+            height: 100%;
+            margin-top: 10vh;
         }
-        #splashSpan{
+
+
+        #limoImg {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+
+        #splashSpan {
             font-size: 60px;
             font-family: 'Kaushan Script', cursive;
+        }
+        #textDiv{
+            text-align: center;
         }
     </style>
 
     <head />
 
 <body>
-    <div id="splashDiv">
+    <div id="imageDiv">
         <img id="limoImg" src="img/driverIconWText.png">
-        <br/><br/>
+        <br /><br />
+    </div>
+    <div id="textDiv">
         <span id="splashSpan">Coming soon</span>
     </div>
 </body>
