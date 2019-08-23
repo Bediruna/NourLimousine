@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--<link rel="stylesheet" href="" />-->
+    <script>
+        $(document).ready(function() {
+
+        });
+
+        var iScrollPos = 0;
+        $(document).bind('scroll', function() {
+            var iCurScrollPos = $(this).scrollTop();
+
+            if (iCurScrollPos > iScrollPos) {
+                //Scrolling Down
+                var scrolledDistanceFromTop = $(document).scrollTop();
+                var docHeight = $(document).height();
+                if (scrolledDistanceFromTop > 0 && scrolledDistanceFromTop < (docHeight / 2)) {
+                    $(document).scrollTop(docHeight / 2);
+                }
+            } else {
+                //Scrolling Up
+            }
+            iScrollPos = iCurScrollPos;
+        });
+
+    </script>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="topNavDiv" style="height: 9vh; border-bottom: solid black 1vh;">
+    </div>
+    <div id="headDiv" style="height: 89vh; background-color: aqua; border-bottom: solid red 1vh">
+    </div>
+    <div id="bodyDiv" style="height: 99vh; background-color: greenyellow; border-bottom: solid #3300ff 1vh">
+    </div>
+</body>
+<html>
