@@ -1,55 +1,213 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/aos.css">
+    <script src="js/aos.js"></script>
 
-    <title>Nour Limousine</title>
-    <!--    <link rel="shortcut icon" href="ManIcon.ico" />-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lexend+Deca&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca|Lexend+Zetta&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script>
+        $(document).ready(function() {
+
+            carousel();
+
+        });
+
+        var carouselIndex = 0;
+
+        function carousel() {
+
+            let imageUrls = ["img/landingAirplane.jpg", "img/nycBrooklynBridge.jpg", "img/openingDoor.jpg"];
+            let imageTexts = ["Airport Service", "Transportation in and out of the city", "Professional Service"];
+
+            if (carouselIndex >= imageUrls.length - 1) {
+                carouselIndex = 0
+            } else {
+                carouselIndex++;
+            }
+
+            $('#parallaxDiv').fadeTo('slow', 0.3, function() {
+                $(this).css('background-image', 'url(' + imageUrls[carouselIndex] + ')');
+                $("#imageText").text(imageTexts[carouselIndex]);
+            }).fadeTo('slow', 1);
+
+            setTimeout(carousel, 5000);
+        }
+
+    </script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            font-family: 'Lexend Deca', sans-serif;
-            background-color: aliceblue;
+            margin: 0px;
         }
 
-        #imageDiv {
-            display: grid;
+        body,
+        html {
             height: 100%;
-            margin-top: 10vh;
-        }
-
-
-        #limoImg {
-            max-width: 100%;
-            max-height: 100vh;
-            margin: auto;
-        }
-
-        #splashSpan {
-            font-size: 60px;
-            font-family: 'Kaushan Script', cursive;
-        }
-        #textDiv{
             text-align: center;
+            font-family: 'Lexend Deca', sans-serif;
         }
-    </style>
 
-    <head />
+        #topHeadDiv {
+            height: 10%;
+            background-color: white+;
+            padding: 5px;
+        }
+
+        #topNavDiv {
+            height: 7%;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+        }
+
+        #parallaxDiv {
+            height: 83%;
+            width: 100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            background-image: url(img/landingAirplane.jpg);
+            padding-top: 35vh;
+            /*            padding: 20px;*/
+        }
+
+        #buttonDiv {
+            position: relative;
+            /*            top: 50%;*/
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #3399ff;
+            border: 2px solid #0059b3;
+            border-radius: 7px;
+            width: 130px;
+            height: 40px;
+            padding-top: 6px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            z-index: 0;
+            margin-top: 20px;
+        }
+
+        #buttonDiv:hover {
+            color: #3399ff;
+            background-color: white;
+        }
+
+        #titleText {
+            color: white;
+            font-family: 'Lexend Zetta', sans-serif;
+            font-weight: bold;
+            font-size: 60px;
+        }
+
+        #imageText {
+            color: white;
+            font-size: 30px;
+        }
+
+        #fleetDiv {
+            width: 100%;
+            height: 100%;
+        }
+
+        #floatImageAndText {
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        #floatingImageText {
+            font-size: 50px;
+        }
+
+        #floatingImage {
+            max-height: 80%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+        #footerDiv {
+            height: 100%;
+            background-color: royalblue;
+        }
+
+        #carDesc {
+            font-size: 30px;
+        }
+
+        .navItem {
+            vertical-align: middle;
+        }
+
+        .navItem a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            line-height: 4;
+            text-decoration: none;
+        }
+
+        .navItem a:hover {
+            background-color: royalblue;
+            color: white;
+        }
+
+        #navItemsDiv {
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 25%);
+        }
+
+    </style>
+</head>
 
 <body>
-    <div id="imageDiv">
-        <img id="limoImg" src="img/driverIconWText.png">
-        <br /><br />
+
+    <div id="topHeadDiv">
+        <div id="logo" style="height: 100%"><img style="position: relative; height: 100%" src="img/driverIconWText.png" /></div>
+        <div style="position:absolute; top:2%; margin-left: 2%;">
+            <span style="float:right;"><i class="fa fa-phone" style="font-size:1.2em; margin-right:10px;"></i>(555)555 5555</span>
+        </div>
+        <div style="position:absolute; top:2%; right:2%;">
+            <span style="float:right;"><i class="fa fa-envelope" style="font-size:1.2em; margin-right:10px;"></i>(555)555 5555</span>
+        </div>
     </div>
-    <div id="textDiv">
-        <span id="splashSpan">Coming soon</span>
+    <div id="topNavDiv">
+        <div id="navItemsDiv">
+            <div class="navItem"><a href="#home">Services</a></div>
+            <div class="navItem"><a href="#news">Vehicle</a></div>
+            <div class="navItem"><a href="#contact">Contact</a></div>
+            <div class="navItem"><a href="#about">Locations</a></div>
+        </div>
     </div>
+
+    <div id="parallaxDiv">
+        <span id="titleText">Nour Limousine</span><br />
+        <span id="imageText">Airport Service</span>
+        <div id="buttonDiv">Call Now</div>
+    </div>
+
+    <div id="fleetDiv">
+        <div id="floatImageAndText" data-aos="fade-left">
+            <span id="floatingImageText">Ready when you are</span><br>
+            <img id="floatingImage" src="img/2017CadillacCTS360Cropped.png"><br>
+            <span id="carDesc">Cadillac CTS 360</span><br>
+        </div>
+    </div>
+    <div id="footerDiv">
+    </div>
+    <script>
+        AOS.init({
+            duration: 2000
+        });
+
+    </script>
 </body>
-<html />
+<html>
