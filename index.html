@@ -17,7 +17,6 @@
         $('.carousel').carousel({
 
         });
-
         $(document).ready(function() {
             // Optimalisation: Store the references outside the event handler:
             var $window = $(window);
@@ -45,61 +44,6 @@
         });
 
     </script>
-    <style>
-        .flip-card {
-            background-color: transparent;
-            width: 300px;
-            height: 300px;
-            perspective: 1000px;
-
-            display: inline-table;
-        }
-
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        }
-
-        .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .flip-card-front,
-        .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-        }
-
-        .flip-card-front {
-            background-color: #bbb;
-            color: black;
-        }
-
-        .flip-card-front-text {
-            margin-top: -50px;
-            color: white;
-        }
-
-        .flip-card-front-text2 {
-            margin-top: -100px;
-            color: white;
-        }
-
-        .flip-card-back {
-            background-color: #2980b9;
-            color: white;
-            transform: rotateY(180deg);
-            padding-top: 20%;
-        }
-
-    </style>
 </head>
 
 <body>
@@ -144,8 +88,6 @@
             </div>
         </div>
     </div>
-
-
     <div id="services" class="bg-light p-4">
         <h2>Services</h2>
         <div class="container">
@@ -154,8 +96,8 @@
                     <div class="flip-card" data-aos="flip-left">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="img/planeSq.jpg" alt="airplane" style="width:300px;height:300px;">
-                                <h2 class="flip-card-front-text2">Airport Transportation</h2>
+                                <img src="img/planeSq.jpg" alt="airplane" style="width:350px;height:350px;">
+                                <h2 class="flip-card-front-text2">Airport<br />Transportation</h2>
                             </div>
                             <div class="flip-card-back">
                                 <h2>Airport Transportation</h2>
@@ -168,7 +110,7 @@
                     <div class="flip-card" data-aos="flip-left">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="img/citySq.jpg" alt="Avatar" style="width:300px;height:300px;">
+                                <img src="img/citySq.jpg" alt="Avatar" style="width:350px;height:350px;">
                                 <h2 class="flip-card-front-text">City Transport</h2>
                             </div>
                             <div class="flip-card-back">
@@ -182,7 +124,7 @@
                     <div class="flip-card" data-aos="flip-left">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="img/serviceSq.jpg" alt="Avatar" style="width:300px;height:300px;">
+                                <img src="img/serviceSq.jpg" alt="Avatar" style="width:350px;height:350px;">
                                 <h2 class="flip-card-front-text">Quality Service</h2>
                             </div>
                             <div class="flip-card-back">
@@ -198,7 +140,7 @@
                     <div class="flip-card" data-aos="flip-left">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="img/clockCalendarSq.jpg" alt="Avatar" style="width:300px;height:300px;">
+                                <img src="img/clockCalendarSq.jpg" alt="Avatar" style="width:350px;height:350px;">
                                 <h2 class="flip-card-front-text2">Accommodative Schedule</h2>
                             </div>
                             <div class="flip-card-back">
@@ -212,7 +154,7 @@
                     <div class="flip-card" data-aos="flip-left">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="img/handshakeSq.jpg" alt="Avatar" style="width:300px;height:300px;">
+                                <img src="img/handshakeSq.jpg" alt="Avatar" style="width:350px;height:350px;">
                                 <h2 class="flip-card-front-text">Reliable Service</h2>
                             </div>
                             <div class="flip-card-back">
@@ -226,7 +168,7 @@
                     <div class="flip-card" data-aos="flip-left">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="img/timeSquareSq.png" alt="Avatar" style="width:300px;height:300px;">
+                                <img src="img/timeSquareSq.png" alt="Avatar" style="width:350px;height:350px;">
                                 <h2 class="flip-card-front-text">All Events</h2>
                             </div>
                             <div class="flip-card-back">
@@ -239,16 +181,14 @@
             </div>
         </div>
     </div>
-
     <div id="locations" class="p-4">
         <h2>Locations</h2>
         <p>Serving Locations in New York and New Jersey</p>
         <img class="d-block w-100" src="img/map.PNG" alt="Third slide" id="mapImg">
     </div>
-
     <div id="vehicle" class="p-4">
         <h2>Comfortable and high quality vehicles</h2>
-        <img class="d-block w-100" src="img/2019-suburban.jpg" alt="Third slide" id="thirdImg" data-aos="fade-left">
+        <img class="d-block w-100" src="img/2019-suburban.jpg" alt="Third slide" id="thirdImg">
         <h3 class="mt-3">Ready when you are</h3>
     </div>
     <div id="contact" class="bg-light p-4">
@@ -270,7 +210,6 @@
             </div>
         </div>
     </div>
-
     <script>
         AOS.init({
             duration: 1200,
