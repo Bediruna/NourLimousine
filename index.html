@@ -2,97 +2,101 @@
 <html>
 
 <head>
+    <title>Nour Limousine</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <meta name="keywords" content="Airport Limousine, Allendale NJ, Avenel NJ, Belleville NJ, Bergenfield NJ, Berkeley Heights NJ, Bloomfield NJ, Bogota NJ, Boonton NJ, Butler NJ, Caldwell NJ, Carlstadt NJ, Carteret NJ, Cedar Grove NJ, Cedar Knolls NJ, Chatham NJ, Clark NJ, Cliffside Park NJ, Clifton NJ, Closter NJ, Colonia NJ, Cranford NJ, Cresskill NJ, Demarest NJ, Denville NJ, East Rutherford NJ, Edison NJ, Elmwood Park NJ, Emerson NJ, Englewood NJ, Fair Lawn NJ, Fairfield NJ, Fairview NJ, Fort Lee NJ, Franklin Lakes NJ, Garfield NJ, Garwood NJ, Glen Ridge NJ, Glen Rock NJ, Hackensack NJ, Hasbrouck Heights NJ, Hawthorne NJ, Hillsdale NJ, Hoboken NJ, Ho-Ho-Kus NJ, Iselin NJ, Jersey City NJ, Kearny NJ, Little Falls NJ, Livingston NJ, Lodi NJ, Lyndhurst NJ, Madison NJ, Mahwah NJ, Maywood NJ, Metuchen NJ, Midland Park NJ, Montclair NJ, Montvale NJ, Montville NJ, Morris Plains NJ, Morristown NJ, Mountainside NJ, Nanuet NJ, New Milford NJ, New Providence NJ, North Arlington NJ, North Bergen NJ, North Caldwell NJ, Norwood NJ, Nutley NJ, Nyack NJ, Oakland NJ, Oldtappan NJ, Oradell NJ, Orange Town NJ, Orangeburg NJ, Paramus NJ, Park Ridge NJ, Parsippany NJ, Pearl River NJ, Penquannock NJ, Piermont NJ, Pine Brook NJ, Piscataway NJ, Plainfield NJ, Pompton Lakes NJ, Rahway NJ, Ramsey NJ, Ridgefield Park NJ, Ridgefield NJ, Ridgewood NJ, Riverdale NJ, Roseland NJ, Rutherford NJ, Saddle Brook NJ, Scotch Plains NJ, Secaucus NJ, South Plainfield NJ, Suffern NJ, Summit NJ, Tappan NJ, Teaneck NJ, Tenafly NJ, Totowa NJ, Towaco NJ, Union City NJ, Upper Saddle River NJ, Verona NJ, Waldwick NJ, Wallington NJ, Watchung NJ, Wayne NJ, Weehawken NJ, West New York NJ, West Nyack NJ, West Paterson NJ, Westfield NJ, Westwood NJ, Whippany NJ, woodbridge NJ, Woodcliff Lake NJ, Wyckoff NJ, Airport Taxi Newark, JFK and La Guardia Airport">
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/aos.js"></script>
+    <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Lexend+Deca|Lexend+Zetta&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <script>
         $('.carousel').carousel({
-            interval: 500
+
+        });
+
+        $(document).ready(function() {
+            // Optimalisation: Store the references outside the event handler:
+            var $window = $(window);
+            var $pane = $('#pane1');
+
+            function checkWidth() {
+                var windowWidth = $window.width();
+                var windowHeight = $window.height();
+                var aspectRatio = windowWidth / windowHeight;
+                if (aspectRatio < 1.2) {
+                    $("#firstImg").attr("src", "img/landingAirplaneSq.jpg");
+                    $("#secondImg").attr("src", "img/nycBrooklynBridgeSq.jpg");
+                    $("#thirdImg").attr("src", "img/openingDoorSq.jpg");
+                } else {
+                    $("#firstImg").attr("src", "img/landingAirplane2x.jpg");
+                    $("#secondImg").attr("src", "img/nycBrooklynBridge2x.jpg");
+                    $("#thirdImg").attr("src", "img/openingDoor2x.jpg");
+                }
+
+            }
+            // Execute on load
+            checkWidth();
+            // Bind event listener
+            $(window).resize(checkWidth);
         });
 
     </script>
     <style>
-        body {
-            margin: 0px;
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+
+            display: inline-table;
         }
 
-        body,
-        html {
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
             height: 100%;
             text-align: center;
-            font-family: 'Lexend Deca', sans-serif;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         }
 
-        #parallaxDiv {
-            height: 100%;
-            width: 100%;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-
-            background-image: url(img/landingAirplane.jpg);
-            padding-top: 35vh;
-            /*            padding: 20px;*/
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
         }
 
-        #buttonDiv {
-            position: relative;
-            /*            top: 50%;*/
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #3399ff;
-            border: 2px solid #0059b3;
-            border-radius: 7px;
-            width: 130px;
-            height: 40px;
-            padding-top: 6px;
-            font-weight: bold;
-            color: white;
-            cursor: pointer;
-            z-index: 0;
-            margin-top: 20px;
-        }
-
-        #buttonDiv:hover {
-            color: #3399ff;
-            background-color: white;
-        }
-
-        #titleText {
-            color: white;
-            font-family: 'Lexend Zetta', sans-serif;
-            font-weight: bold;
-            font-size: 60px;
-        }
-
-        #imageText {
-            color: white;
-            font-size: 30px;
-        }
-
-
-        #locationListDiv ul.list-group {
-            columns: 100px 2;
-            -webkit-columns: 2;
-            -moz-columns: 2;
-        }
-
-        a {
-            text-decoration: none !important
-        }
-
-        #mainText {
+        .flip-card-front,
+        .flip-card-back {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+            background-color: #bbb;
+            color: black;
+        }
+
+        .flip-card-front-text {
+            margin-top: -50px;
             color: white;
-            z-index: 1;
-            font-size:6em;
+        }
+
+        .flip-card-front-text2 {
+            margin-top: -100px;
+            color: white;
+        }
+
+        .flip-card-back {
+            background-color: #2980b9;
+            color: white;
+            transform: rotateY(180deg);
+            padding-top: 20%;
         }
 
     </style>
@@ -105,292 +109,173 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav navbar-right">
-<!--
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Vehicle</a>
+                    <a class="nav-link" href="#services">Services</a>
                 </li>
--->
                 <li class="nav-item">
                     <a class="nav-link" href="#locations">Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#vehicle">Vehicle</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
             </ul>
         </div>
-
-        <div class="nav navbar-nav navbar-right">
-            <a href="tel:973-555-5555" class="btn btn-info btn-lg"><i style="font-size:24px" class="fa">&#xf095;</i> Call Now</a>
-        </div>
     </nav>
     <div id="home">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <h1 id="mainText">Nour Limousine</h1>
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-pause="false">
+            <div id="centerDiv">
+                <h1 id="mainText">Nour Limousine</h1>
+                <a href="tel:973-555-5555" class="btn btn-info btn-lg"><i style="font-size:24px" class="fa">&#xf095;</i> Call Now</a>
+            </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="img/landingAirplane2x.jpg" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h2>Airport Service</h2>
-                    </div>
+                    <img class="d-block w-100" src="img/landingAirplane2x.jpg" alt="First slide" id="firstImg">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="img/nycBrooklynBridge2x.jpg" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h2>Transportation in and out of the city</h2>
-                    </div>
+                    <img class="d-block w-100" src="img/nycBrooklynBridge2x.jpg" alt="Second slide" id="secondImg">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="img/openingDoor2x.jpg" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h2>Professional Service</h2>
+                    <img class="d-block w-100" src="img/openingDoor2x.jpg" alt="Third slide" id="thirdImg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="services" class="bg-light p-4">
+        <h2>Services</h2>
+        <div class="container">
+            <div class="row">
+                <div class="mt-3 col-lg-4 col-sm-12 text-center">
+                    <div class="flip-card" data-aos="flip-left">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="img/planeSq.jpg" alt="airplane" style="width:300px;height:300px;">
+                                <h2 class="flip-card-front-text2">Airport Transportation</h2>
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>Airport Transportation</h2>
+                                <p>Nour Limousine will pick you up and drop you off to Newark, JFK or La Guardia airports.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 col-lg-4 col-sm-12">
+                    <div class="flip-card" data-aos="flip-left">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="img/citySq.jpg" alt="Avatar" style="width:300px;height:300px;">
+                                <h2 class="flip-card-front-text">City Transport</h2>
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>City Transport</h2>
+                                <p>Nour Limousine can take you in and out of the city.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 col-lg-4 col-sm-12">
+                    <div class="flip-card" data-aos="flip-left">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="img/serviceSq.jpg" alt="Avatar" style="width:300px;height:300px;">
+                                <h2 class="flip-card-front-text">Quality Service</h2>
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>Quality Service</h2>
+                                <p>You can always expect professional and quality service.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+            <div class="row">
+                <div class="mt-3 col-lg-4 col-sm-12">
+                    <div class="flip-card" data-aos="flip-left">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="img/clockCalendarSq.jpg" alt="Avatar" style="width:300px;height:300px;">
+                                <h2 class="flip-card-front-text2">Accommodative Schedule</h2>
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>Accommodative Schedule</h2>
+                                <p>Nour Limousine can work with your schedule and pick you up when you're ready.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 col-lg-4 col-sm-12">
+                    <div class="flip-card" data-aos="flip-left">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="img/handshakeSq.jpg" alt="Avatar" style="width:300px;height:300px;">
+                                <h2 class="flip-card-front-text">Reliable Service</h2>
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>Reliable Service</h2>
+                                <p>You can rely on Nour Limousine to get you where you need to go.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 col-lg-4 col-sm-12">
+                    <div class="flip-card" data-aos="flip-left">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="img/timeSquareSq.png" alt="Avatar" style="width:300px;height:300px;">
+                                <h2 class="flip-card-front-text">All Events</h2>
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>All Events</h2>
+                                <p>You can call Nour Limousine for all kinds of events.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
     <div id="locations" class="p-4">
         <h2>Locations</h2>
-        <p>Serving the Garden State and the Big Apple</p>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">Allendale, NJ</div>
-                <div class="col-md-4">Avenel, NJ</div>
-                <div class="col-md-4">Belleville, NJ</div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Bergenfield, NJ</div>
-                <div class="col-md-4">Berkeley Heights, NJ</div>
-                <div class="col-md-4">Bloomfield, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Bogota, NJ </div>
-                <div class="col-md-4">Boonton, NJ </div>
-                <div class="col-md-4">Butler, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Caldwell, NJ </div>
-                <div class="col-md-4">Carlstadt, NJ </div>
-                <div class="col-md-4">Carteret, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Cedar Grove, NJ </div>
-                <div class="col-md-4">Cedar Knolls, NJ </div>
-                <div class="col-md-4">Chatham, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Clark, NJ </div>
-                <div class="col-md-4">Cliffside Park, NJ </div>
-                <div class="col-md-4">Clifton, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Closter, NJ </div>
-                <div class="col-md-4">Colonia, NJ </div>
-                <div class="col-md-4">Cranford, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Cresskill, NJ </div>
-                <div class="col-md-4">Demarest, NJ </div>
-                <div class="col-md-4">Denville, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">East Rutherford, NJ </div>
-                <div class="col-md-4">Edison, NJ </div>
-                <div class="col-md-4">Elmwood Park, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Emerson, NJ </div>
-                <div class="col-md-4">Englewood, NJ </div>
-                <div class="col-md-4">Fair Lawn, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Fairfield, NJ </div>
-                <div class="col-md-4">Fairview, NJ </div>
-                <div class="col-md-4">Fort Lee, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Franklin Lakes, NJ </div>
-                <div class="col-md-4">Garfield, NJ </div>
-                <div class="col-md-4">Garwood, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Glen Ridge, NJ </div>
-                <div class="col-md-4">Glen Rock, NJ </div>
-                <div class="col-md-4">Hackensack, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Hasbrouck Heights, NJ </div>
-                <div class="col-md-4">Hawthorne, NJ </div>
-                <div class="col-md-4">Hillsdale, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Hoboken, NJ </div>
-                <div class="col-md-4">Ho-Ho-Kus, NJ </div>
-                <div class="col-md-4">Iselin, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Jersey City, NJ </div>
-                <div class="col-md-4">Kearny, NJ </div>
-                <div class="col-md-4">Little Falls, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Livingston, NJ </div>
-                <div class="col-md-4">Lodi, NJ </div>
-                <div class="col-md-4">Lyndhurst, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Madison, NJ </div>
-                <div class="col-md-4">Mahwah, NJ </div>
-                <div class="col-md-4">Maywood, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Metuchen, NJ </div>
-                <div class="col-md-4">Midland Park, NJ </div>
-                <div class="col-md-4">Montclair, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Montvale, NJ </div>
-                <div class="col-md-4">Montville, NJ </div>
-                <div class="col-md-4">Morris Plains, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Morristown, NJ </div>
-                <div class="col-md-4">Mountainside, NJ </div>
-                <div class="col-md-4">Nanuet, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">New Milford, NJ </div>
-                <div class="col-md-4">New Providence, NJ </div>
-                <div class="col-md-4">North Arlington, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">North Bergen, NJ </div>
-                <div class="col-md-4">North Caldwell, NJ </div>
-                <div class="col-md-4">Norwood, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Nutley, NJ </div>
-                <div class="col-md-4">Nyack, NJ </div>
-                <div class="col-md-4">Oakland, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Oldtappan, NJ </div>
-                <div class="col-md-4">Oradell, NJ </div>
-                <div class="col-md-4">Orange Town, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Orangeburg, NJ </div>
-                <div class="col-md-4">Paramus, NJ </div>
-                <div class="col-md-4">Park Ridge, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Parsippany, NJ </div>
-                <div class="col-md-4">Pearl River, NJ </div>
-                <div class="col-md-4">Penquannock, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Piermont, NJ </div>
-                <div class="col-md-4">Pine Brook, NJ </div>
-                <div class="col-md-4">Piscataway, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Plainfield, NJ </div>
-                <div class="col-md-4">Pompton Lakes, NJ </div>
-                <div class="col-md-4">Rahway, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Ramsey, NJ </div>
-                <div class="col-md-4">Ridgefield Park, NJ </div>
-                <div class="col-md-4">Ridgefield, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Ridgewood, NJ </div>
-                <div class="col-md-4">Riverdale, NJ </div>
-                <div class="col-md-4">Roseland, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Rutherford, NJ </div>
-                <div class="col-md-4">Saddle Brook, NJ </div>
-                <div class="col-md-4">Scotch Plains, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Secaucus, NJ </div>
-                <div class="col-md-4">South Plainfield, NJ </div>
-                <div class="col-md-4">Suffern, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Summit, NJ </div>
-                <div class="col-md-4">Tappan, NJ </div>
-                <div class="col-md-4">Teaneck, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Tenafly, NJ </div>
-                <div class="col-md-4">Totowa, NJ </div>
-                <div class="col-md-4">Towaco, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Union City, NJ </div>
-                <div class="col-md-4">Upper Saddle River, NJ </div>
-                <div class="col-md-4">Verona, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Waldwick, NJ </div>
-                <div class="col-md-4">Wallington, NJ </div>
-                <div class="col-md-4">Watchung, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Wayne, NJ </div>
-                <div class="col-md-4">Weehawken, NJ </div>
-                <div class="col-md-4">West New York, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">West Nyack, NJ </div>
-                <div class="col-md-4">West Paterson, NJ </div>
-                <div class="col-md-4">Westfield, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Westwood, NJ </div>
-                <div class="col-md-4">Whippany, NJ </div>
-                <div class="col-md-4">woodbridge, NJ </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">Woodcliff Lake, NJ </div>
-                <div class="col-md-4">Wyckoff, NJ</div>
-                <div class="col-md-4"></div>
-            </div>
-        </div>
+        <p>Serving Locations in New York and New Jersey</p>
+        <img class="d-block w-100" src="img/map.PNG" alt="Third slide" id="mapImg">
+    </div>
+
+    <div id="vehicle" class="p-4">
+        <h2>Comfortable and high quality vehicles</h2>
+        <img class="d-block w-100" src="img/2019-suburban.jpg" alt="Third slide" id="thirdImg" data-aos="fade-left">
+        <h3 class="mt-3">Ready when you are</h3>
     </div>
     <div id="contact" class="bg-light p-4">
-        <h2>Contact Now</h2>
-        <div class="container">
-            <div class="row">
+        <div class="container h-100">
+            <h2>Contact Now</h2>
+            <div class="row h-100 justify-content-center align-items-center">
                 <div class="col-md-6">
                     <a href="tel:973-652-2388">
-                        <i class="fa fa-phone fa-2x mt-4 blue-text"></i>
+                        <i class="fa fa-phone fa-4x mt-4 blue-text"></i>
                         <p>1 (973) 555-5555</p>
                     </a>
                 </div>
                 <div class="col-md-6">
                     <a href="mailto: contact@nourlimousine.com">
-                        <i class="fa fa-envelope fa-2x mt-4 blue-text"></i>
+                        <i class="fa fa-envelope fa-4x mt-4 blue-text"></i>
                         <p>contact@nourlimousine.com</p>
                     </a>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        AOS.init({
+            duration: 1200,
+        })
+
+    </script>
 </body>
 <html>
