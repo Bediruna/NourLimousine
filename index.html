@@ -2,6 +2,20 @@
 <html>
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154624574-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-154624574-1');
+
+    </script>
+
     <title>Nour Limousine</title>
     <link rel="shortcut icon" href="img/favicon.ico">
     <meta name="keywords" content="Airport Limousine, Allendale NJ, Avenel NJ, Belleville NJ, Bergenfield NJ, Berkeley Heights NJ, Bloomfield NJ, Bogota NJ, Boonton NJ, Butler NJ, Caldwell NJ, Carlstadt NJ, Carteret NJ, Cedar Grove NJ, Cedar Knolls NJ, Chatham NJ, Clark NJ, Cliffside Park NJ, Clifton NJ, Closter NJ, Colonia NJ, Cranford NJ, Cresskill NJ, Demarest NJ, Denville NJ, East Rutherford NJ, Edison NJ, Elmwood Park NJ, Emerson NJ, Englewood NJ, Fair Lawn NJ, Fairfield NJ, Fairview NJ, Fort Lee NJ, Franklin Lakes NJ, Garfield NJ, Garwood NJ, Glen Ridge NJ, Glen Rock NJ, Hackensack NJ, Hasbrouck Heights NJ, Hawthorne NJ, Hillsdale NJ, Hoboken NJ, Ho-Ho-Kus NJ, Iselin NJ, Jersey City NJ, Kearny NJ, Little Falls NJ, Livingston NJ, Lodi NJ, Lyndhurst NJ, Madison NJ, Mahwah NJ, Maywood NJ, Metuchen NJ, Midland Park NJ, Montclair NJ, Montvale NJ, Montville NJ, Morris Plains NJ, Morristown NJ, Mountainside NJ, Nanuet NJ, New Milford NJ, New Providence NJ, North Arlington NJ, North Bergen NJ, North Caldwell NJ, Norwood NJ, Nutley NJ, Nyack NJ, Oakland NJ, Oldtappan NJ, Oradell NJ, Orange Town NJ, Orangeburg NJ, Paramus NJ, Park Ridge NJ, Parsippany NJ, Pearl River NJ, Penquannock NJ, Piermont NJ, Pine Brook NJ, Piscataway NJ, Plainfield NJ, Pompton Lakes NJ, Rahway NJ, Ramsey NJ, Ridgefield Park NJ, Ridgefield NJ, Ridgewood NJ, Riverdale NJ, Roseland NJ, Rutherford NJ, Saddle Brook NJ, Scotch Plains NJ, Secaucus NJ, South Plainfield NJ, Suffern NJ, Summit NJ, Tappan NJ, Teaneck NJ, Tenafly NJ, Totowa NJ, Towaco NJ, Union City NJ, Upper Saddle River NJ, Verona NJ, Waldwick NJ, Wallington NJ, Watchung NJ, Wayne NJ, Weehawken NJ, West New York NJ, West Nyack NJ, West Paterson NJ, Westfield NJ, Westwood NJ, Whippany NJ, woodbridge NJ, Woodcliff Lake NJ, Wyckoff NJ, Airport Taxi Newark, JFK and La Guardia Airport">
@@ -13,6 +27,8 @@
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Lexend+Deca|Lexend+Zetta&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     <script>
         $('.carousel').carousel({
 
@@ -42,6 +58,39 @@
             // Bind event listener
             $(window).resize(checkWidth);
         });
+
+        var citymap = {
+            newyork: {
+                center: {
+                    lat: 40.714,
+                    lng: -74.005
+                },
+                population: 8405837
+            }
+        };
+
+        function myMap() {
+            var mapProp = {
+                center: new google.maps.LatLng(40.714, -74.005),
+                zoom: 10,
+                streetViewControl: false,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+            var cityCircle = new google.maps.Circle({
+                strokeColor: '#03fc0b',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: '#03fc0b',
+                fillOpacity: 0.25,
+                map: map,
+                center: {
+                    lat: 40.714,
+                    lng: -74.005
+                },
+                radius: 45000
+            });
+        }
 
     </script>
 </head>
@@ -74,6 +123,8 @@
             <div id="centerDiv">
                 <h1 id="mainText">Nour Limousine</h1>
                 <a href="tel:973-652-2388" class="btn btn-info btn-lg"><i style="font-size:24px" class="fa">&#xf095;</i> Call Now</a>
+                <span style="color:white; font-size:1.2em; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">or</span>
+                <a href="tel:973-652-2388" class="btn btn-info btn-lg"><i style="font-size:24px" class="fa">&#xf073;</i> Book Now</a>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -110,7 +161,7 @@
                     <div class="flip-card" data-aos="flip-left">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="img/citySq.jpg" alt="Avatar" style="width:350px;height:350px;">
+                                <img src="img/citySq.jpg" alt="city" style="width:350px;height:350px;">
                                 <h2 class="flip-card-front-text">City Transport</h2>
                             </div>
                             <div class="flip-card-back">
@@ -124,7 +175,7 @@
                     <div class="flip-card" data-aos="flip-left">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="img/serviceSq.jpg" alt="Avatar" style="width:350px;height:350px;">
+                                <img src="img/serviceSq.jpg" alt="service" style="width:350px;height:350px;">
                                 <h2 class="flip-card-front-text">Quality Service</h2>
                             </div>
                             <div class="flip-card-back">
@@ -140,7 +191,7 @@
                     <div class="flip-card" data-aos="flip-left">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="img/clockCalendarSq.jpg" alt="Avatar" style="width:350px;height:350px;">
+                                <img src="img/clockCalendarSq.jpg" alt="clock" style="width:350px;height:350px;">
                                 <h2 class="flip-card-front-text2">Accommodative Schedule</h2>
                             </div>
                             <div class="flip-card-back">
@@ -154,7 +205,7 @@
                     <div class="flip-card" data-aos="flip-left">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="img/handshakeSq.jpg" alt="Avatar" style="width:350px;height:350px;">
+                                <img src="img/handshakeSq.jpg" alt="handshake" style="width:350px;height:350px;">
                                 <h2 class="flip-card-front-text">Reliable Service</h2>
                             </div>
                             <div class="flip-card-back">
@@ -168,7 +219,7 @@
                     <div class="flip-card" data-aos="flip-left">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
-                                <img src="img/timeSquareSq.png" alt="Avatar" style="width:350px;height:350px;">
+                                <img src="img/timeSquareSq.png" alt="timeSquare" style="width:350px;height:350px;">
                                 <h2 class="flip-card-front-text">All Events</h2>
                             </div>
                             <div class="flip-card-back">
@@ -184,7 +235,10 @@
     <div id="locations" class="p-4">
         <h2>Locations</h2>
         <p>Serving Locations in New York and New Jersey</p>
-        <img class="d-block w-100" src="img/map.PNG" alt="Third slide" id="mapImg">
+        <div id="googleMap" style="width:100%;height:800px;"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxrIM6dMNcqw-Zw-ecqA6yrBAQmQ6_xek&callback=myMap"></script>
+        <!--        <img class="d-block w-100" src="img/map.PNG" alt="Third slide" id="mapImg">-->        
+        <p>Contact for more details</p>
     </div>
     <div id="vehicle" class="p-4">
         <h2>Comfortable and high quality vehicles</h2>

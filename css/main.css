@@ -36,6 +36,7 @@ a {
 #mainText {
     color: white;
     font-size: 6em;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .flip-card {
@@ -77,11 +78,13 @@ a {
 .flip-card-front-text {
     margin-top: -50px;
     color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .flip-card-front-text2 {
     margin-top: -100px;
     color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .flip-card-back {
