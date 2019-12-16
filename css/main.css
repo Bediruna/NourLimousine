@@ -96,6 +96,22 @@ a {
     font-size: 1.2em;
 }
 
-#locations{
+@media (max-width:993px) {
+    .flip-card-back {
+        font-size: 1.5em;
+    }
+
+    .flip-card-front-text {
+        margin-top: -60px;
+        font-size: 2.6em;
+    }
+
+    .flip-card-front-text2 {
+        margin-top: -110px;
+        font-size: 2.6em;
+    }
+}
+
+#locations {
     background-color: aliceblue;
 }
