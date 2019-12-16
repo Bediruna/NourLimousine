@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154624574-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-154624574-1');
+
+    </script>
+
+    <title>Nour Limousine</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <meta name="keywords" content="Airport Limousine, Allendale NJ, Avenel NJ, Belleville NJ, Bergenfield NJ, Berkeley Heights NJ, Bloomfield NJ, Bogota NJ, Boonton NJ, Butler NJ, Caldwell NJ, Carlstadt NJ, Carteret NJ, Cedar Grove NJ, Cedar Knolls NJ, Chatham NJ, Clark NJ, Cliffside Park NJ, Clifton NJ, Closter NJ, Colonia NJ, Cranford NJ, Cresskill NJ, Demarest NJ, Denville NJ, East Rutherford NJ, Edison NJ, Elmwood Park NJ, Emerson NJ, Englewood NJ, Fair Lawn NJ, Fairfield NJ, Fairview NJ, Fort Lee NJ, Franklin Lakes NJ, Garfield NJ, Garwood NJ, Glen Ridge NJ, Glen Rock NJ, Hackensack NJ, Hasbrouck Heights NJ, Hawthorne NJ, Hillsdale NJ, Hoboken NJ, Ho-Ho-Kus NJ, Iselin NJ, Jersey City NJ, Kearny NJ, Little Falls NJ, Livingston NJ, Lodi NJ, Lyndhurst NJ, Madison NJ, Mahwah NJ, Maywood NJ, Metuchen NJ, Midland Park NJ, Montclair NJ, Montvale NJ, Montville NJ, Morris Plains NJ, Morristown NJ, Mountainside NJ, Nanuet NJ, New Milford NJ, New Providence NJ, North Arlington NJ, North Bergen NJ, North Caldwell NJ, Norwood NJ, Nutley NJ, Nyack NJ, Oakland NJ, Oldtappan NJ, Oradell NJ, Orange Town NJ, Orangeburg NJ, Paramus NJ, Park Ridge NJ, Parsippany NJ, Pearl River NJ, Penquannock NJ, Piermont NJ, Pine Brook NJ, Piscataway NJ, Plainfield NJ, Pompton Lakes NJ, Rahway NJ, Ramsey NJ, Ridgefield Park NJ, Ridgefield NJ, Ridgewood NJ, Riverdale NJ, Roseland NJ, Rutherford NJ, Saddle Brook NJ, Scotch Plains NJ, Secaucus NJ, South Plainfield NJ, Suffern NJ, Summit NJ, Tappan NJ, Teaneck NJ, Tenafly NJ, Totowa NJ, Towaco NJ, Union City NJ, Upper Saddle River NJ, Verona NJ, Waldwick NJ, Wallington NJ, Watchung NJ, Wayne NJ, Weehawken NJ, West New York NJ, West Nyack NJ, West Paterson NJ, Westfield NJ, Westwood NJ, Whippany NJ, woodbridge NJ, Woodcliff Lake NJ, Wyckoff NJ, Airport Taxi Newark, JFK and La Guardia Airport">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca|Lexend+Zetta&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#home"><img src="img/driverIconWText.png" width="60" height="60" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#locations">Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#vehicle">Vehicle</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <button class="btn btn-outline-success" type="button">Book Now</button>
+    </nav>
+    <br /> <br />
+
+    <div id="locations" class="p-4">
+        <h2>Locations</h2>
+        <p>Serving Locations in New York and New Jersey</p>
+        <div id="googleMap" style="width:100%;height:800px;"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxrIM6dMNcqw-Zw-ecqA6yrBAQmQ6_xek&callback=myMap"></script>
+        <!--        <img class="d-block w-100" src="img/map.PNG" alt="Third slide" id="mapImg">-->
+    </div>
+    <div class="center p-4">
+        <div class="col-md-6">
+            <div class="md-form mb-0">
+                <input type="text" id="name" name="name" class="form-control">
+                <label for="name" class="">Your name</label>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <label for="inputAddress">Pickup Location</label>
+            <input runat="server" type="text" class="form-control" id="inputAddress" placeholder="Pickup Location" />
+        </div>
+        <div class="col-lg-12">
+            <label for="inputAddress2">Destination</label>
+            <input runat="server" type="text" class="form-control" id="inputAddress2" placeholder="Destination" />
+        </div>
+        <button ID="SubmitApplicationBtn" runat="server" type="submit" CssClass="btn btn-primary" Text="Submit" OnClick="SubmitApplicationBtn_Click">Book</button>
+    </div>
+    
+    
+    
+    
+    <!--Section: Contact v.2-->
+<section class="mb-4">
+
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+        a matter of hours to help you.</p>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control">
+                            <label for="name" class="">Your name</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" class="form-control">
+                            <label for="email" class="">Your email</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" class="form-control">
+                            <label for="subject" class="">Subject</label>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                            <label for="message">Your message</label>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+
+            </form>
+
+            <div class="text-center text-md-left">
+                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+            </div>
+            <div class="status"></div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>San Francisco, CA 94126, USA</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>+ 01 234 567 89</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>contact@mdbootstrap.com</p>
+                </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+
+    </div>
+
+</section>
+<!--Section: Contact v.2-->
+</body>
+<html>

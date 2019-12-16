@@ -22,76 +22,13 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/aos.js"></script>
+    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Lexend+Deca|Lexend+Zetta&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
     <script>
-        $('.carousel').carousel({
-
-        });
-        $(document).ready(function() {
-            // Optimalisation: Store the references outside the event handler:
-            var $window = $(window);
-            var $pane = $('#pane1');
-
-            function checkWidth() {
-                var windowWidth = $window.width();
-                var windowHeight = $window.height();
-                var aspectRatio = windowWidth / windowHeight;
-                if (aspectRatio < 1.2) {
-                    $("#firstImg").attr("src", "img/landingAirplaneSq.jpg");
-                    $("#secondImg").attr("src", "img/nycBrooklynBridgeSq.jpg");
-                    $("#thirdImg").attr("src", "img/openingDoorSq.jpg");
-                } else {
-                    $("#firstImg").attr("src", "img/landingAirplane2x.jpg");
-                    $("#secondImg").attr("src", "img/nycBrooklynBridge2x.jpg");
-                    $("#thirdImg").attr("src", "img/openingDoor2x.jpg");
-                }
-
-            }
-            // Execute on load
-            checkWidth();
-            // Bind event listener
-            $(window).resize(checkWidth);
-        });
-
-        var citymap = {
-            newyork: {
-                center: {
-                    lat: 40.714,
-                    lng: -74.005
-                },
-                population: 8405837
-            }
-        };
-
-        function myMap() {
-            var mapProp = {
-                center: new google.maps.LatLng(40.714, -74.005),
-                zoom: 10,
-                streetViewControl: false,
-            };
-            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-
-            var cityCircle = new google.maps.Circle({
-                strokeColor: '#03fc0b',
-                strokeOpacity: 0.8,
-                strokeWeight: 2,
-                fillColor: '#03fc0b',
-                fillOpacity: 0.25,
-                map: map,
-                center: {
-                    lat: 40.714,
-                    lng: -74.005
-                },
-                radius: 45000
-            });
-        }
-
     </script>
 </head>
 
@@ -123,8 +60,10 @@
             <div id="centerDiv">
                 <h1 id="mainText">Nour Limousine</h1>
                 <a href="tel:973-652-2388" class="btn btn-info btn-lg"><i style="font-size:24px" class="fa">&#xf095;</i> Call Now</a>
+<!--
                 <span style="color:white; font-size:1.2em; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">or</span>
                 <a href="tel:973-652-2388" class="btn btn-info btn-lg"><i style="font-size:24px" class="fa">&#xf073;</i> Book Now</a>
+-->
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -237,7 +176,7 @@
         <p>Serving Locations in New York and New Jersey</p>
         <div id="googleMap" style="width:100%;height:800px;"></div>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxrIM6dMNcqw-Zw-ecqA6yrBAQmQ6_xek&callback=myMap"></script>
-        <!--        <img class="d-block w-100" src="img/map.PNG" alt="Third slide" id="mapImg">-->        
+        <!--        <img class="d-block w-100" src="img/map.PNG" alt="Third slide" id="mapImg">-->
         <p>Contact for more details</p>
     </div>
     <div id="vehicle" class="p-4">
