@@ -41,8 +41,7 @@ a {
 
 .flip-card {
     background-color: transparent;
-    width: 350px;
-    height: 350px;
+    width: 100%;
     perspective: 1000px;
 
     display: inline-table;

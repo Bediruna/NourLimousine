@@ -20,6 +20,21 @@ $(document).ready(function () {
             $("#thirdImg").attr("src", "img/openingDoor2x.jpg");
         }
 
+
+        var elementWidth = $('.flip-card').width();
+        $('.flip-card').css({
+            'height': elementWidth + 'px'
+        });
+        if (windowWidth < 993) {
+            $('.flip-card-back').css({
+                'font-size': '1.5em'
+            });
+        } else {
+
+            $('.flip-card-back').css({
+                'font-size': '1.2em'
+            });
+        }
     }
     // Execute on load
     checkWidth();
