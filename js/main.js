@@ -22,7 +22,7 @@ $(document).ready(function () {
 
 
         var elementWidth = $('.flip-card').width();
-        $('.flip-card').css({
+        $('.flip-card, .flip-card-back').css({
             'height': elementWidth + 'px'
         });
     }
