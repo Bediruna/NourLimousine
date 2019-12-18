@@ -21,26 +21,34 @@ $(document).ready(function () {
         }
 
 
-        var elementWidth = $('.flip-card').width();
+        var flipCardWidth = $('.flip-card').width();
         $('.flip-card, .flip-card-back').css({
-            'height': elementWidth + 'px'
+            'height': flipCardWidth + 'px'
+        });
+        var navHeight = $('nav').height() - 32;
+        console.log(navHeight);
+        $('body').css({
+            'margin-top': navHeight + 'px'
         });
     }
     // Execute on load
     checkWidth();
     // Bind event listener
     $(window).resize(checkWidth);
+    
+    initAutocomplete("Origin");
+    initAutocomplete("Destination");
 });
 
 function myMap() {
-    var mapProp = {
+    let mapProp = {
         center: new google.maps.LatLng(40.714, -74.005),
         zoom: 10,
         streetViewControl: false,
     };
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    let map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
-    var cityCircle = new google.maps.Circle({
+    let cityCircle = new google.maps.Circle({
         strokeColor: '#03fc0b',
         strokeOpacity: 0.8,
         strokeWeight: 2,
@@ -53,4 +61,34 @@ function myMap() {
         },
         radius: 45000
     });
+}
+
+function showBookingMap(){    
+    let mapProp = {
+        center: new google.maps.LatLng(40.714, -74.005),
+        zoom: 10,
+        streetViewControl: false,
+    };
+    let map = new google.maps.Map(document.getElementById("bookingMap"), mapProp);
+}
+
+function initAutocomplete(suffix) {
+    var addressField = document.getElementById('address' + suffix);
+    
+    var options = {
+      types: ['geocode'],
+      componentRestrictions: { 'country': 'us' }
+    };
+    
+    var autocomplete = new google.maps.places.Autocomplete(addressField, options);
+
+    autocomplete.setFields(['address_component']);
+    
+    autocomplete.addListener('place_changed', function () {
+        fillInAddress();
+    });
+}
+
+function fillInAddress() {
+    
 }
