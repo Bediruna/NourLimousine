@@ -110,12 +110,17 @@ a {
         margin-top: -120px;
         font-size: 2.6em;
     }
-    #callNowBtn{
+
+    #callNowBtn {
         line-height: 2;
-        font-size:2em;
+        font-size: 2em;
     }
 }
 
 #locations {
     background-color: aliceblue;
+}
+
+.contactP {
+    font-size:1.5em;
 }
