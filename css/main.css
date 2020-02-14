@@ -96,7 +96,9 @@ a {
     font-size: 1.2em;
 }
 
+
 @media (max-width:993px) {
+/*
     .flip-card-back {
         font-size: 1.5em;
     }
@@ -115,7 +117,16 @@ a {
         line-height: 2;
         font-size: 2em;
     }
+*/
 }
+@media (max-width:500px) {
+        
+    #mainText {        
+        font-size: 3.5em;
+    }
+}
+
+
 
 #locations {
     background-color: aliceblue;
