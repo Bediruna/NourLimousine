@@ -126,10 +126,10 @@ a {
 }
 @media (max-width:771px) {        
     #mainText {        
-        font-size: 4em;
+        font-size: 3.5em;
     }
 }
-@media (max-width:400px) {
+@media (max-width:350px) {
         
     #mainText {        
         font-size: 3em;
