@@ -119,10 +119,15 @@ a {
     }
 */
 }
-@media (max-width:500px) {
+@media (max-width:500px) {        
+    #mainText {        
+        font-size: 4em;
+    }
+}
+@media (max-width:400px) {
         
     #mainText {        
-        font-size: 3.5em;
+        font-size: 3em;
     }
 }
 
